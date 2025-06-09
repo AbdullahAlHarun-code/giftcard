@@ -1,0 +1,103 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #111, #333);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  text-align: center;
+  padding: 2rem;
+}
+.generator-grid {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background: #222;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100px;
+  height: 100px;
+}
+.card button {
+  background: #ff4d4d;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  margin-top: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #444;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+.modal-content .loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #ff4d4d;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 1rem auto;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+#verifyBtn {
+  display: none;
+  background: linear-gradient(45deg, #00ff6a, #00c3ff);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,255,100,0.6), 0 0 15px rgba(0,200,255,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#verifyBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,255,100,0.8), 0 0 25px rgba(0,200,255,0.6);
+}

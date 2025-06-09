@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Game Gift Card Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 Ultimate Gift Card Generator</h1>
+    <p>Unlock free V-Bucks, Robux, UC, and more — all from trusted sources.</p>
+  </header>
+  <section class="hero" style="position: relative; width: 80%; height: 300px; overflow: hidden;">
+    <img src="images/banner.png" alt="Gift Card Banner" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+  </section>
+
+  <section class="how-it-works">
+    <h2>🔍 How It Works</h2>
+    <ol>
+      <li>Choose your desired game and card type.</li>
+      <li>Click 'Generate' to begin the process.</li>
+      <li>Complete a quick verification to unlock your reward.</li>
+    </ol>
+  </section>
+
+  <main class="generator-grid">
+    <div class="card" onclick="generateCard('Fortnite')">
+      <img src="images/1.jpeg" alt="Fortnite"/>
+      <h2>Fortnite V-Bucks</h2>
+      <button>Generate</button>
+    </div>
+    <div class="card" onclick="generateCard('Roblox')">
+      <img src="images/2.png" alt="Roblox"/>
+      <h2>Robux Generator</h2>
+      <button>Generate</button>
+    </div>
+    <div class="card" onclick="generateCard('PUBG')">
+      <img src="images/3.webp" alt="PUBG"/>
+      <h2>PUBG UC</h2>
+      <button>Generate</button>
+    </div>
+  </main>
+
+  <section class="testimonials">
+    <h2>💬 What Users Are Saying</h2>
+    <div class="testimonial">
+      <p>"I got 1000 Robux in under 2 minutes. Insane!" – <strong>Ashley, USA</strong></p>
+    </div>
+    <div class="testimonial">
+      <p>"Fortnite V-Bucks worked like a charm. Loved the simple steps." – <strong>Mike, UK</strong></p>
+    </div>
+  </section>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="gameTitle">Generating...</h3>
+      <p>Connecting to server...</p>
+      <div class="loader"></div>
+      <button id="verifyBtn" onclick="redirectToLocker()">✅ Verify Now & Unlock</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Ultimate Gift Card Generator. This site is for promotional purposes only and is not affiliated with any game publishers. For the best CPA marketing results, integrate your preferred offer locker (OGAds, CPABuild, CPAGrip, etc.) and customize offers to match trending gaming gift cards. Always comply with platform guidelines and local laws.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

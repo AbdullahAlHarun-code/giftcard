@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Game Gift Card Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 Ultimate Gift Card Generator</h1>
+    <p>Unlock free V-Bucks, Robux, UC, and more — all from trusted sources.</p>
+  </header>
+  <section class="hero" style="position: relative; width: 80%; height: 300px; overflow: hidden;">
+    <img src="images/banner.png" alt="Gift Card Banner" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+  </section>
+
+  <section class="how-it-works">
+    <h2>🔍 How It Works</h2>
+    <ol>
+      <li>Choose your desired game and card type.</li>
+      <li>Select a gift card amount.</li>
+      <li>Complete a quick verification to unlock your reward.</li>
+    </ol>
+  </section>
+
+  <main class="generator-grid">
+    <div class="card" onclick="showAmountOptions('Fortnite')">
+      <img src="images/1.jpeg" alt="Fortnite"/>
+      <h2>Fortnite V-Bucks</h2>
+      <button>Generate</button>
+    </div>
+    <div class="card" onclick="showAmountOptions('Roblox')">
+      <img src="images/2.png" alt="Roblox"/>
+      <h2>Robux Generator</h2>
+      <button>Generate</button>
+    </div>
+    <div class="card" onclick="showAmountOptions('PUBG')">
+      <img src="images/3.webp" alt="PUBG"/>
+      <h2>PUBG UC</h2>
+      <button>Generate</button>
+    </div>
+  </main>
+
+  <section class="testimonials">
+    <h2>💬 What Users Are Saying</h2>
+    <div class="testimonial">
+      <p>"I got 1000 Robux in under 2 minutes. Insane!" – <strong>Ashley, USA</strong></p>
+    </div>
+    <div class="testimonial">
+      <p>"Fortnite V-Bucks worked like a charm. Loved the simple steps." – <strong>Mike, UK</strong></p>
+    </div>
+  </section>
+
+  <!-- Gift Card Amount Selection -->
+  <div id="amountSelection" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeAmountModal()">&times;</span>
+      <h3>Select a Gift Card Amount</h3>
+      <div class="amount-options">
+        <button class="fancy-btn" onclick="generateCard('$20')">
+          <span class="btn-amount">$20</span>
+          <span class="btn-desc">Quick Start</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <button class="fancy-btn" onclick="generateCard('$50')">
+          <span class="btn-amount">$50</span>
+          <span class="btn-desc">Most Popular</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <button class="fancy-btn" onclick="generateCard('$100')">
+          <span class="btn-amount">$100</span>
+          <span class="btn-desc">Best Value!</span>
+          <span class="btn-arrow">→</span>
+        </button>
+
+        <style>
+        .fancy-btn {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(90deg, #ff9800 0%, #ff5e62 100%);
+          color: #fff;
+          border: none;
+          border-radius: 1.5em;
+          padding: 1.2em 2.5em;
+          margin: 1em 0.7em;
+          font-size: 1.3em;
+          font-weight: bold;
+          box-shadow: 0 6px 24px rgba(255,94,98,0.25), 0 1.5px 4px rgba(0,0,0,0.10);
+          cursor: pointer;
+          transition: transform 0.15s, box-shadow 0.15s;
+          position: relative;
+          overflow: hidden;
+        }
+        .fancy-btn:hover, .fancy-btn:focus {
+          transform: scale(1.07);
+          box-shadow: 0 10px 32px rgba(255,94,98,0.35), 0 2px 8px rgba(0,0,0,0.12);
+          background: linear-gradient(90deg, #ff5e62 0%, #ff9800 100%);
+        }
+        .btn-amount {
+          font-size: 1.5em;
+          letter-spacing: 1px;
+        }
+        .btn-desc {
+          font-size: 0.95em;
+          font-weight: 400;
+          margin-top: 0.2em;
+          opacity: 0.85;
+        }
+        .btn-arrow {
+          position: absolute;
+          right: 1.2em;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.3em;
+          opacity: 0.7;
+          transition: right 0.2s;
+        }
+        .fancy-btn:hover .btn-arrow {
+          right: 0.7em;
+          opacity: 1;
+        }
+        </style>
+      </div>
+    </div>
+  </div>
+
+  <!-- Generator Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="gameTitle">Generating...</h3>
+      <p>Connecting to server...</p>
+      <div class="loader"></div>
+      <button id="verifyBtn" onclick="redirectToLocker()">✅ Verify Now & Unlock</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Ultimate Gift Card Generator. This site is for promotional purposes only and is not affiliated with any game publishers. For the best CPA marketing results, integrate your preferred offer locker (OGAds, CPABuild, CPAGrip, etc.) and customize offers to match trending gaming gift cards. Always comply with platform guidelines and local laws.</p>
+  </footer>
+
+  <script src="script2.js"></script>
+</body>
+</html>

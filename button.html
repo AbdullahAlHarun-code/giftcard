@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<title>Verify!</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="button.css">
+</head>
+<body>
+<center>
+    <br>
+    <p>In order to prevent abuse and make sure that users get the code, we have added Human Verification.</p>
+    <br>
+    <br>
+    <a id="verify-button" class="myButton" href="" rel="nofollow noreferrer" target="_blank">VERIFY</a>
+</center>
+</body>
+<script type="text/javascript" src="resources/pluginsV2.js"></script>
+<script type="text/javascript" src="js/standard.js"></script>
+<script>
+function getQueryParam(name) {
+  var params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Button page loaded');
+  // Get the verifyUrl from the query parameters
+
+  var verifyUrl = getQueryParam('verifyUrl');
+  console.log('Verify URL from query:', verifyUrl);
+  if (verifyUrl) {
+    console.log('Verify URL found:', verifyUrl);
+    var verifyBtn = document.getElementById('verify-button');
+    console.log('Setting verify button URL:', verifyUrl);
+    if (verifyBtn) {
+      verifyBtn.setAttribute('href', verifyUrl);
+      verifyBtn.setAttribute('target', '_blank');
+    }
+  }
+});
+</script>
+</html>

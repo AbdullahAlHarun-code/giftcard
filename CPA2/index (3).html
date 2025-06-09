@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Game Gift Card Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 Ultimate Gift Card Generator</h1>
+    <p>Unlock free V-Bucks, Robux, UC, and more — all from trusted sources.</p>
+  </header>
+
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1050&q=80" alt="Gift Card Banner" />
+  </section>
+
+  <section class="how-it-works">
+    <h2>🔍 How It Works</h2>
+    <ol>
+      <li>Choose your desired game and card type.</li>
+      <li>Select a gift card amount.</li>
+      <li>Complete a quick verification to unlock your reward.</li>
+    </ol>
+  </section>
+
+  <main class="generator-grid">
+    <div class="card" onclick="showAmountOptions('Fortnite')">
+      <img src="https://cdn.pixabay.com/photo/2020/12/17/14/35/fortnite-5839303_960_720.png" alt="Fortnite"/>
+      <h2>Fortnite V-Bucks</h2>
+      <button>Generate</button>
+    </div>
+  </main>
+
+  <!-- Gift Card Amount Selection -->
+  <div id="amountSelection" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeAmountModal()">&times;</span>
+      <h3>Select a Gift Card Amount</h3>
+      <div class="amount-options">
+        <button onclick="generateCard('$20')">$20</button>
+        <button onclick="generateCard('$50')">$50</button>
+        <button onclick="generateCard('$100')">$100</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Generator Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="gameTitle">Generating...</h3>
+      <p>Connecting to server...</p>
+      <div class="loader"></div>
+      <button id="verifyBtn" onclick="redirectToLocker()">✅ Verify Now & Unlock</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>⚠️ This site is for demonstration only. Replace links with your real CPA locker. Templates work with OGAds, CPABuild, CPAGrip, etc.</p>
+  </footer>
+
+  <script src="script2.js"></script>
+</body>
+</html>
