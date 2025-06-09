@@ -28,6 +28,7 @@ function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
 
+
 function redirectToLocker() {
   window.location.href = "https://your-cpa-locker-url.com";
 }

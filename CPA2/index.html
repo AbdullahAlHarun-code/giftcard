@@ -59,21 +59,63 @@
       <span class="close" onclick="closeAmountModal()">&times;</span>
       <h3>Select a Gift Card Amount</h3>
       <div class="amount-options">
-        <button class="fancy-btn" onclick="generateCard('$20')">
-          <span class="btn-amount">$20</span>
-          <span class="btn-desc">Quick Start</span>
-          <span class="btn-arrow">→</span>
-        </button>
-        <button class="fancy-btn" onclick="generateCard('$50')">
-          <span class="btn-amount">$50</span>
-          <span class="btn-desc">Most Popular</span>
-          <span class="btn-arrow">→</span>
-        </button>
-        <button class="fancy-btn" onclick="generateCard('$100')">
-          <span class="btn-amount">$100</span>
-          <span class="btn-desc">Best Value!</span>
-          <span class="btn-arrow">→</span>
-        </button>
+        <div class="gift-card-option" onclick="generateCard('$20')" style="background: linear-gradient(135deg, #ff7e5f, #feb47b); border: none; border-radius: 16px; padding: 1.5em; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); transition: transform 0.3s, box-shadow 0.3s;">
+          <img src="images/amazon-logo.png" alt="Amazon Logo" class="gift-card-logo" style="width: 80px; height: auto; margin-right: 1.5em;" />
+          <div class="gift-card-details">
+            <span class="gift-card-amount" style="font-size: 1.8em; font-weight: bold; color: #fff;">$20</span>
+            <span class="gift-card-desc" style="font-size: 1em; color: #fceabb;">Quick Start</span>
+          </div>
+        </div>
+        <div class="gift-card-option" onclick="generateCard('$50')" style="background: linear-gradient(135deg, #6a11cb, #2575fc); border: none; border-radius: 16px; padding: 1.5em; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); transition: transform 0.3s, box-shadow 0.3s;">
+          <img src="images/amazon-logo.png" alt="Amazon Logo" class="gift-card-logo" style="width: 80px; height: auto; margin-right: 1.5em;" />
+          <div class="gift-card-details">
+            <span class="gift-card-amount" style="font-size: 1.8em; font-weight: bold; color: #fff;">$50</span>
+            <span class="gift-card-desc" style="font-size: 1em; color: #d4fc79;">Most Popular</span>
+          </div>
+        </div>
+        <div class="gift-card-option" onclick="generateCard('$100')" style="background: linear-gradient(135deg, #43cea2, #185a9d); border: none; border-radius: 16px; padding: 1.5em; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); transition: transform 0.3s, box-shadow 0.3s;">
+          <img src="images/amazon-logo.png" alt="Amazon Logo" class="gift-card-logo" style="width: 80px; height: auto; margin-right: 1.5em;" />
+          <div class="gift-card-details">
+            <span class="gift-card-amount" style="font-size: 1.8em; font-weight: bold; color: #fff;">$100</span>
+            <span class="gift-card-desc" style="font-size: 1em; color: #a8ff78;">Best Value!</span>
+          </div>
+        </div>
+
+        <style>
+        .gift-card-option {
+          display: flex;
+          align-items: center;
+          background: #f7f7f7;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          padding: 1em;
+          margin: 1em 0.5em;
+          cursor: pointer;
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .gift-card-option:hover {
+          transform: scale(1.05);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .gift-card-logo {
+          width: 50px;
+          height: auto;
+          margin-right: 1em;
+        }
+        .gift-card-details {
+          display: flex;
+          flex-direction: column;
+        }
+        .gift-card-amount {
+          font-size: 1.5em;
+          font-weight: bold;
+          color: #333;
+        }
+        .gift-card-desc {
+          font-size: 0.9em;
+          color: #666;
+        }
+        </style>
 
         <style>
         .fancy-btn {
@@ -128,10 +170,45 @@
     </div>
   </div>
 
+  <script>
+    let interactionBlocked = true;
+  
+    function showModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = 'block';
+  
+      // Block interactions
+      interactionBlocked = true;
+      document.body.style.pointerEvents = 'none'; // Disable all interactions
+      modal.style.pointerEvents = 'auto'; // Allow interactions only inside the modal
+  
+      // Enable the final button after 10 seconds
+      setTimeout(() => {
+        interactionBlocked = false;
+        document.body.style.pointerEvents = 'auto'; // Re-enable interactions
+        modal.style.pointerEvents = 'auto'; // Keep modal interactive
+      }, 10000);
+    }
+  
+    function closeModal() {
+      if (interactionBlocked) {
+        alert("You cannot close the popup until the process is complete.");
+        return;
+      }
+      const modal = document.getElementById('modal');
+      modal.style.display = 'none';
+    }
+  
+    function redirectToLocker() {
+      alert("Verification complete! Redirecting...");
+      // Add your redirection logic here
+    }
+  </script>
+  
   <!-- Generator Modal -->
-  <div id="modal" class="modal">
+  <div id="modal" class="modal" style="display: none;">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
+      <!-- <span class="close" onclick="closeModal()">&times;</span> -->
       <h3 id="gameTitle">Generating...</h3>
       <p>Connecting to server...</p>
       <div class="loader"></div>
